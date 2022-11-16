@@ -36,7 +36,6 @@ if __name__ == '__main__':
 ```
 Each day's `README.md` will be structured something like:
 > # Day N: Title
-> ___
 > ## Part 1
 > ```python
 > def p1():
