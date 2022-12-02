@@ -17,6 +17,7 @@ So we can reimagine the input to be like this:
 | rock     | paper       |
 | paper    | rock        |
 | scissors | scissors    |
+
 Here, I add a column to show how many points you earn from what you play and what the outcome is.
 
 | opponent | protagonist | shape score | outcome score | total score |
@@ -24,6 +25,7 @@ Here, I add a column to show how many points you earn from what you play and wha
 | rock     | paper       | 2           | 6             | 8           |
 | paper    | rock        | 1           | 0             | 1           |
 | scissors | scissors    | 3           | 3             | 6           |
+
 `8 + 1 + 6 = 15`, so the total score and answer here would be 15.
 
 In the start of my solution file, I define some constants to be used by both solve functions.
@@ -92,6 +94,7 @@ taking the original sample input, we'd now expect a table like this:
 | rock     | draw   | rock  | 3             | 1           | 4           |
 | paper    | loss   | rock  | 0             | 1           | 1           |
 | scissors | win    | rock  | 6             | 1           | 7           |
+
 `4 + 1 + 7 = 12`, so the total score and answer here would be 12.
 The only challenge here is determining which shape must be thrown to get the result we're meant to.
 However, I just skip that entirely and go straight to adding to the score what the shape *should* score.
@@ -138,6 +141,7 @@ We can break apart the steps I'm doing here in a simple table.
 | 1              | 1   | 2   |
 | 2              | 2   | 3   |
 | 3              | 0   | 1   |
+
 With 1, 2, and 3 being representitive of rock, paper, and scissors respectively, we see that when 
 the opponent throws rock, we throw paper, 
 the opponent throws paper, we throw scissors,
@@ -150,5 +154,6 @@ In the case of the protagonist losing, it's a little more involved.
 | 1              | 2   | 2   | 3   |
 | 2              | 3   | 0   | 1   |
 | 3              | 4   | 1   | 2   |
+
 Just the additional step of adding 1 to the score before modding value gets us exactly what we need to lose.
 See if you can apply this method to part 1 (cause i don't feel like it 💅).
