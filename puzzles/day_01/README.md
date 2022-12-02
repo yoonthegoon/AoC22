@@ -59,7 +59,7 @@ def p2():
     return top_calories
 ```
 The one-liner is a bit ugly, but I did it cause why not 🤷.
-That line is equivolent to this:
+That line is equivalent to this:
 ```python
 calories = []
 for elf in INPUT.split('\n\n')[:-1]:
