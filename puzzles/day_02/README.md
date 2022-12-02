@@ -148,6 +148,11 @@ the opponent throws paper, we throw scissors,
 and the opponent throws scissors, we throw rock.
 
 In the case of the protagonist losing, it's a little more involved.
+```python
+else:
+    score += (SCORES[opponent] + 1) % 3 + 1
+```
+Why the extra `+ 1`?
 
 | opponent score | + 1 | % 3 | + 1 |
 |----------------|-----|-----|-----|
