@@ -44,9 +44,6 @@ def p1():
         elif SCORES[protagonist] > SCORES[opponent]:
             score += 6
 
-        else:
-            pass
-
     return score
 
 

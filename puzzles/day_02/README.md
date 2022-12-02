@@ -79,9 +79,8 @@ def p1():
         elif SCORES[protagonist] > SCORES[opponent]:
             score += 6
 
-        # lose
-        else:
-            pass
+        # all that's left are losses, where we don't need to modify the score
+        # so we simply do nothing
 
     return score
 ```
