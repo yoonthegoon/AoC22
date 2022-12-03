@@ -5,6 +5,7 @@ with open('input.txt', 'r') as f:
 RUCKSACKS = INPUT.split('\n')[:-1]
 PRIORITIES = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+
 def p1():
     priorities_sum = 0
 
