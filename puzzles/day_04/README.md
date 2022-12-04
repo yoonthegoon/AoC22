@@ -1,4 +1,4 @@
-# Day 3: Rucksack Reorganization
+# Day 4: Camp Cleanup
 ## Part 1
 The premise of this puzzle is to find how many evles' ranges fully contain others' ranges.
 The sample input and visual explanation [here](https://adventofcode.com/2022/day/4#part2) is done real well, so I won't rewrite it 💁‍♀️.
