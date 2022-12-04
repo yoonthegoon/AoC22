@@ -35,16 +35,16 @@ def p2():
             return True
         return False
 
-    full_contains = 0
+    overlaps = 0
 
     for pair in PAIRS:
         elf1, elf2 = pair.split(',')
         range1, range2 = build_range(elf1), build_range(elf2)
 
         if in_range(range1, range2):
-            full_contains += 1
+            overlaps += 1
 
-    return full_contains
+    return overlaps
 
 
 if __name__ == '__main__':
