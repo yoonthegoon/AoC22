@@ -21,7 +21,7 @@ class Stack:
         self.crates += moved_crates
 
     def move_from(self, move_crates: int) -> list:
-        moved_crates = reversed(self.crates[-move_crates:])
+        moved_crates = self.crates[-move_crates:]
         self.crates = self.crates[:-move_crates]
         return list(moved_crates)
 
@@ -44,7 +44,7 @@ class CrateMover9000:
 
     def follow_instruction(self, instruction: str) -> None:
         move_crates, from_stack, to_stack = (int(i) for i in re.findall(r'[0-9]+', instruction))
-        self.stacks[to_stack].move_to(self.stacks[from_stack].move_from(move_crates))
+        self.stacks[to_stack].move_to(list(reversed(self.stacks[from_stack].move_from(move_crates))))
 
     def __repr__(self):
         return str(self.stacks)
@@ -71,18 +71,10 @@ def p1():
 
 
 def p2():
-    class NewStack(Stack):
-        def move_from(self, move_crates: int) -> list:
-            moved_crates = self.crates[-move_crates:]
-            self.crates = self.crates[:-move_crates]
-            return moved_crates
-
     class CrateMover9001(CrateMover9000):
-        def __init__(self, _stacks: dict):
-            super().__init__(_stacks)
-            self.stacks = {}
-            for _stack in _stacks:
-                self.stacks[_stack] = NewStack(_stacks[_stack])
+        def follow_instruction(self, _instruction: str) -> None:
+            move_crates, from_stack, to_stack = (int(i) for i in re.findall(r'[0-9]+', _instruction))
+            self.stacks[to_stack].move_to(self.stacks[from_stack].move_from(move_crates))
 
     stacks = make_stacks()
     ship = CrateMover9001(stacks)
