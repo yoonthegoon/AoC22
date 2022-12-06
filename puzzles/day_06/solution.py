@@ -10,7 +10,6 @@ def re_factory(characters: int) -> str:
     for i in range(1, characters):
         group = "|".join([f'\\{i}' for i in range(1, i + 1)])
         pattern += f'((?!{group})\\w)'
-
     return pattern
 
 
