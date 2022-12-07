@@ -8,8 +8,8 @@ with open('input.txt', 'r') as f:
 def re_factory(characters: int) -> str:
     pattern = '(.)'
     for i in range(1, characters):
-        group = "|".join([f'\\{i}' for i in range(1, i + 1)])
-        pattern += f'((?!{group})\\w)'
+        group = "|".join([fr'\{i}' for i in range(1, i + 1)])
+        pattern += fr'((?!{group})\w)'
     return pattern
 
 
