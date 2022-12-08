@@ -39,7 +39,7 @@ class Forest:
 
     @property
     def visible(self) -> int:
-        def spam(trees: list[int], end: bool) -> bool:
+        def is_tallest(trees: list[int], end: bool) -> bool:
             if end:
                 index = len(trees) - 1
             else:
@@ -51,19 +51,19 @@ class Forest:
         count = 0
         for i, row in enumerate(self.grid):
             for j, tree in enumerate(row):
-                north = spam(
+                north = is_tallest(
                     [t.height for t in [r[j] for r in self.grid[:i + 1]]],
                     True,
                 )
-                south = spam(
+                south = is_tallest(
                     [t.height for t in [r[j] for r in self.grid[i:]]],
                     False,
                 )
-                east = spam(
+                east = is_tallest(
                     [t.height for t in row[j:]],
                     False,
                 )
-                west = spam(
+                west = is_tallest(
                     [t.height for t in row[:j + 1]],
                     True,
                 )
