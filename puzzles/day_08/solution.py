@@ -34,6 +34,9 @@ class Forest:
                 tree.neighbors['e'] = row[j + 1] if j + 1 < len(row) else None
                 tree.neighbors['w'] = row[j - 1] if j > 0 else None
 
+    def __repr__(self):
+        return '\n'.join([''.join([str(tree.height) for tree in row]) for row in self.grid])
+
     @property
     def visible(self) -> int:
         def spam(trees: list[int], end: bool) -> bool:
